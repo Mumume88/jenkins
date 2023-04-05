@@ -14,13 +14,6 @@ pipeline {
     sh 'cat query_results.txt'
   }
 }
-
-    stage('Test results') {
-      steps {
-        // Add testing steps here
-      }
-    }
-
     stage('Deploy script') {
       steps {
         sh 'mysql --user rfamro --host mysql-rfam-public.ebi.ac.uk --port 4497 --database Rfam < script.sql'
